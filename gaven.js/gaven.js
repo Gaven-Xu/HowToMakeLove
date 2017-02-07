@@ -49,6 +49,27 @@ p.toggleClass = function(cls) {
     }
     return this;
 }
+
+p.ajax = function(url) {
+    var XHR = null;
+    if (window.XMLHttpRequest) {
+        XHR = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        XHR = new ActiveXObject('Microsoft XMLHTTP')
+    } else {
+        XHR = null;
+    }
+    if (XHR) {
+        XHR.open('GET', url);
+        XHR.onreadystatechange = function() {
+            if (XHR.readyState == 4 && XHR.status == 200) {
+                console.log(XHR.responseText);
+                XHR = null;
+            }
+        }
+        XHR.send();
+    }
+}
 // 2016/11/14 下午1:53:34
 if (typeof module == 'object') {
     module.exports = gaven;

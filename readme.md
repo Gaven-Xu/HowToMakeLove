@@ -5,8 +5,6 @@
 
 <!-- tocstop -->
 
-# Atom Packages
-
 ```
 Community Packages (31) C:\Users\Administrator\.atom\packages
 ├── activate-power-mode@1.0.2

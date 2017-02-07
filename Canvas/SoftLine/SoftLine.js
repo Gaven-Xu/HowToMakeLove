@@ -131,7 +131,6 @@ window.Gaven = window.Gaven || {};
 
 
     SoftLine.prototype.setCP = function(cps) {
-        this.clear();
         this._cps = cps;
         this.render();
     }
@@ -150,14 +149,3 @@ window.Gaven = window.Gaven || {};
     Gaven.SoftLine = SoftLine;
 
 })();
-
-var line = new Gaven.SoftLine('canvas', [50,50,350,250],'',[50,50,350,250]);
-line.setAnimation('mousemove', function(e) {
-    var cur = line.getCursor(e);
-    var wp = cur.cX / line._ele.width;
-    var hp = cur.cY / line._ele.height;
-    var xoff = cur.cX - (line._ele.width/2);
-    var yoff = cur.cY - (line._ele.height/2);
-    line.setCP([cur.cX, cur.cY, cur.cX, cur.cY]);
-    line.setPoints([50-(0.6*xoff), 50-(0.6*yoff), 350-(0.6*xoff), 250-(0.6*yoff)]);
-})
