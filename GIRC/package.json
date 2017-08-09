@@ -1,0 +1,26 @@
+{
+  "name": "girc",
+  "version": "1.0.0",
+  "description": "gaven's terminal irc chat tool",
+  "main": "index.js",
+  "bin": {
+    "girc": "bin/girc.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaven-Xu/GIRC.git"
+  },
+  "keywords": [
+    "gaven",
+    "terminal"
+  ],
+  "author": "Gaven Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaven-Xu/GIRC/issues"
+  },
+  "homepage": "https://github.com/Gaven-Xu/GIRC#readme"
+}

@@ -1,0 +1,39 @@
+html,body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+#Body{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgb(193, 193, 193);
+}
+#Button-Menu{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+}
+#Button-Menu:after{
+    display: block;
+    clear:both;
+    content:'';
+}
+#Button-Menu>div{
+    float:left;
+    width:34%;
+    text-align: center;
+    line-height: 60px;
+    color:rgb(71, 71, 71);
+    background: rgb(85, 159, 166);
+    cursor: pointer;
+}
+#Button-Menu>div:first-child,#Button-Menu>div:last-child{
+    width: 33%;
+}
+#Button-Menu>div:hover{
+    color:rgb(255, 255, 255);
+    background: rgb(60, 119, 124);
+}

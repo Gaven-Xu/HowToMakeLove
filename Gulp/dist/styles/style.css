@@ -1,0 +1,28 @@
+html {
+  margin: 0;
+  padding: 0; }
+
+#Box {
+  width: 400px;
+  height: 300px;
+  background: #b6b6b6;
+  margin: auto auto;
+  position: relative; }
+
+.img1 {
+  width: 100px;
+  height: 60px;
+  background: url("../images/sprite_1490237961918.png") no-repeat;
+  background-position: -0px -0px;
+  position: absolute;
+  left: 30px;
+  top: 45px; }
+
+.img2 {
+  height: 100px;
+  width: 60px;
+  background: url("../images/sprite_1490237961918.png") no-repeat;
+  background-position: -0px -562px;
+  position: absolute;
+  right: 30px;
+  bottom: 45px; }

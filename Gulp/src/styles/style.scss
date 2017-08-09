@@ -1,0 +1,29 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+#Box{
+    width: 400px;
+    height: 300px;
+    background: rgb(182, 182, 182);
+    margin:auto auto;
+    position: relative;
+}
+
+.img1{
+    width: 100px;
+    height: 60px;
+    background: url('../images/robert-kim.jpg') no-repeat;
+    position: absolute;
+    left:30px;
+    top:45px;
+}
+
+.img2{
+    height:100px;
+    width: 60px;
+    background: url('../images/shilin.jpg') no-repeat;
+    position: absolute;
+    right:30px;
+    bottom:45px;
+}

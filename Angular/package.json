@@ -1,0 +1,17 @@
+{
+  "name": "Angular",
+  "version": "1.0.0",
+  "description": "<!-- TOC -->",
+  "main": "app.js",
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "angular": "^1.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "server": "http-server ./ -p 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算弧长</title>
+</head>
+
+<body>
+    <form id="Form" name="in">
+        <label for="xianchang">
+            弦长:
+            <input type="text" name="xianchang" value="">
+        </label>
+        <label for="gonggao">
+            拱高：
+            <input type="text" name="gonggao" value="">
+        </label>
+        <button type="submit" name="button">计算</button>
+    </form>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function huchang(xianchang, gonggao) {
+            var a = Math.atan((xianchang / 2) / gonggao);
+            // console.log('a:'+a);
+
+            // Math.tan(a) = (xianchang/2)/gonggao;
+            var b = Math.PI / 2 - a;
+            // console.log('b:'+b);
+
+            var c = 2 * b;
+            // console.log('c',c);
+            // Math.sin(c) = 10.5 / r;
+            r = (xianchang / 2) / Math.sin(c);
+            // console.log('半径 :'+r);
+
+            var per = c / Math.PI;
+            // console.log('per:'+per);
+
+            // var result = 4*r*(Math.PI/2  - a);
+            var result = 2 * Math.PI * r * per;
+
+            // console.log('弧长 :' +result);
+
+            return {
+                r: r,
+                hc: result
+            }
+
+        }
+        // huchang(21,8);
+
+
+
+        var Form = document.getElementById('Form');
+        var Result = document.getElementById('result');
+        Form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var xc = Form.xianchang.value;
+            var gg = Form.gonggao.value;
+            var result = huchang(xc,gg);
+            Result.innerHTML = '半径为：'+result.r+'</br>弧长为：'+result.hc;
+        })
+    </script>
+</body>
+
+</html>

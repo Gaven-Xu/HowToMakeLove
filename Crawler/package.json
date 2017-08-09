@@ -1,0 +1,17 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "bin": {
+    "cw": "bin/cw.js"
+  },
+  "author": "Gaven",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
+  },
+  "crawler": {
+    "ignore": [
+      "http://www.beian.gov.cn/"
+    ]
+  }
+}

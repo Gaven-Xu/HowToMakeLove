@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Utalk</title>
+    <link rel="stylesheet" href="./style/main.min.css">
+    <script src="./lib/socket.io.min.js"></script>
+    <script src="./script/wshandle.min.js"></script>
+</head>
+
+<body>
+    <div id="message_box"></div>
+    <form id="input">
+        <input type="text" placeholder="From" disabled id="from" name="from">
+        <select type="text" id="to" name="to">
+            <option value="all" selected>all</option>
+        </select>
+        <textarea type="text" placeholder="Message" id="message" name="message"></textarea>
+        <input type="submit" id="submit" text="OK">
+    </form>
+    <div id="shadow">
+        <form id="set">
+            <span id="info">TELL ME YOUR NAME</span>
+            <input type="text" placeholder="NickName" id="nick" name="nick">
+        </form>
+    </div>
+    <div id="Menu" class="drag"></div>
+    <script src="./script/utalk.min.js"></script>
+</body>
+
+</html>

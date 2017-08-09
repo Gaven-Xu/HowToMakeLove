@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Angular - Practice</title>
+    <script src="./lib/angular.min.js" charset="utf-8"></script>
+    <script src="./lib/angular-ui-router.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body ng-app="app">
+    <ui-view id="Body"></ui-view>
+    <div id="Button-Menu">
+        <div ui-sref="home">首页</div>
+        <div ui-sref="find">发现</div>
+        <div ui-sref="setting">设置</div>
+    </div>
+    <script src="./script/routes.js" charset="utf-8"></script>
+    <script src="./app.js" charset="utf-8"></script>
+</body>
+</html>
