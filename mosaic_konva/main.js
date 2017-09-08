@@ -6,9 +6,9 @@
         height:600
     })
 
-    var layerPics =  new Konva.Layer();
-    layerPics.addName('LayerPics');
-    stage.add(layerPics);
+    var layer =  new Konva.Layer();
+    layer.addName('LayerPics');
+    stage.add(layer);
 
     var imageObj = new Image();
     imageObj.onload = function(){
@@ -19,11 +19,9 @@
             height:stage.width()*9/16,
             image:imageObj
         });
-
-        layerPics.add(imgBack);
-        layerPics.draw();
+        layer.add(imgBack);
+        layer.draw();
     }
-    console.log(stage);
     imageObj.src = '../mosaic/images/wallhaven1.jpg';
 
 })();
