@@ -1,0 +1,19 @@
+{
+  "name": "mosaic_konva",
+  "version": "1.0.0",
+  "description": "mosaic whit konva",
+  "main": "index.html",
+  "scripts": {
+    "test": "open ./index.html"
+  },
+  "keywords": [
+    "mosaic",
+    "konva"
+  ],
+  "author": "Gaven",
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "konva": "^1.6.8"
+  }
+}
