@@ -47,6 +47,11 @@
             draggable: true
         })
 
+        /**
+         * rotation 扇形开始的角度
+         * angle 顺时针转多少度
+         * radius 扇形的半径
+         */
         var wedge = new Konva.Wedge({
             x: stage.getWidth() / 2,
             y: stage.getHeight() / 2,
@@ -88,12 +93,12 @@
             draggable: true,
             tension: 2
         })
-        
+
         poly.move({
             x: stage.getWidth() / 2 - 60,
             y: stage.getHeight() / 2 - 60
         })
-        
+
         var roundLine = new Konva.Line({
             points: [0, 0, 300, 100, 600, 0],
             stroke: '#000',
@@ -101,18 +106,197 @@
             dash: [0, 10],
             lineCap: 'round',
             closed: true,
-            fill: '#000',
+            fill: 'rgba(123,67,23,0.5)',
             tension: 0.5,
             draggable: true,
-            zIndex:1
+            zIndex: 1
         })
-        
+
         roundLine.move({
             x: 100,
             y: 100
+
+        })
+
+        var text = new Konva.Text({
+            x: 20,
+            y: stage.getHeight() - 200,
+            text: '咸鱼也有梦想',
+            fontSize: 100,
+            fontFamily: '微软雅黑',
+            stroke: '#f90',
+            fill: 'rgba(0,0,0,0)',
+            strokeWidth: 2,
+            dash: [10, 5, 30, 10],
+            draggable: true
+        })
+
+        var textpath = new Konva.TextPath({
+            x: 20,
+            y: stage.getHeight() - 200,
+            text: '咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想咸鱼也有梦想',
+            fontSize: 14,
+            fontFamily: '微软雅黑',
+            fill: 'rgba(0,0,0,0.7)',
+            draggable: true,
+            data: 'M10,10 C-100,0 300,560 300,160 0,0 -100,-500 L10,10'
+        })
+
+        var star = new Konva.Star({
+            x: stage.getWidth() / 4,
+            y: stage.getHeight() / 4,
+            numPoints: 7,
+            innerRadius: 60,
+            outerRadius: 100,
+            fill: '#ff5',
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable: true,
+            // lineJoin:'round',
             
         })
-        layer_shape.add(rect,circle,ellipse,wedge,line,poly,roundLine);
+
+        var ring = new Konva.Ring({
+            x: 100,
+            y: 100,
+            innerRadius: 60,
+            outerRadius: 100,
+            fill: "#ff5",
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable: true
+        })
+
+        var arc = new Konva.Arc({
+            x: 200,
+            y: 300,
+            innerRadius: 40,
+            outerRadius: 70,
+            rotation: 180,
+            angle: 180,
+            fill: "#ff5",
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable: true
+        })
+
+        var label1 = new Konva.Label({
+            x: 430,
+            y: 150,
+            draggable:true,
+            opacity: 1
+        })
+
+        var tag1 = new Konva.Tag({
+            fill: 'black',
+            pointerDirection: 'down',
+            pointerWidth: 10,
+            pointerHeight: 5,
+            lineJoin: 'round',
+            shadowColor: 'black',
+            shadowBlur: 10,
+            shadowOffset: 10,
+            shadowOpacity: 0.5,
+        })
+
+        var text1 = new Konva.Text({
+            text:'Hello World',
+            fill:"white",
+            fontSize:10,
+            padding:5,
+            height:20
+        })
+
+        label1.add(tag1).add(text1)
+
+
+        var path = new Konva.Path({
+            x:stage.getWidth()/1.5,
+            y:stage.getHeight()/1.5,
+            data:'M0,0 C0,0 0,-100 100,-100 c0,0 100,0 100,100',
+            fill:'red',
+            draggable:true
+        })
+
+        var regPoly = new Konva.RegularPolygon({
+            x:stage.getWidth()/2,
+            y:stage.getHeight()/2,
+            sides:4,
+            radius:100,
+            fill: "#ff5",
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable:true,
+            shadowColor: '#666',
+            shadowBlur: 5,
+            shadowOffset: {x : 0, y : 5},
+            shadowOpacity: 0,
+        });
+
+        regPoly.on('mouseover',function(){
+            this.fill('#f00');
+            layer_shape.draw()
+        })
+
+        regPoly.on('mouseout',function(){
+            this.fill('#ff5');
+            layer_shape.draw()
+        })
+
+        var arrow = new Konva.Arrow({
+            x:80,
+            y:80,
+            points:[0,0,300,300],
+            pointerLength:100,
+            pointerWidth:100,
+            // pointerHeight:300,
+            fill: "#ff5",
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable:true,
+        })
+
+        /**
+         * sceceFunc 传入context，使用原生方法绘制形状
+         */
+        var triangle = new Konva.Shape({
+            sceneFunc: function(context) {
+              context.beginPath();
+              context.moveTo(20, 50);
+              context.lineTo(220, 80);
+              context.quadraticCurveTo(150, 100, 260, 170);
+              context.closePath();
+              // Konva specific method
+              context.fillStrokeShape(this);
+            },
+            fill: "#ff5",
+            stroke: '#58f',
+            strokeWidth: 6,
+            draggable:true,
+          }); 
+        /**
+         * Rect 矩形
+         * Circle 圆形
+         * Ellipse 椭圆
+         * Line 之前，折线，曲线，多边形，不规则图形
+         * Text 文本
+         * TextPath 路径文本
+         * 
+         * Sprite 精灵图
+         * Image 图片
+         * 
+         * Wedge 扇形
+         * Star 星形
+         * Ring 环形
+         * Arc 弧形
+         * Label 标签，Tag 标签形状（包括三角箭头），Text 可作为标签文字add到Label中
+         * 
+         * Path 路径，按照SVG绘图原理
+         * RegularPolygon
+         */
+        layer_shape.add(rect, circle, ellipse, wedge, line, poly, roundLine, text, textpath);
+        layer_shape.add(star, ring, arc);
+        layer_shape.add(label1,path,regPoly,arrow,triangle)
         layer_shape.draw(); // draw 相当于刷新，
     }
 
