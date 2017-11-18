@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <sub v-if="show" v-bind:title="date">注意</sub>
+        <ol>
+            <li v-for='item in todolist'>
+                <span v-html="message"></span>
+            </li>
+        </ol>
+        <span>{{tl.length}}</span>
+        <span>{{todolist.length}}</span>
+    </div>
+    <script src="./components/index.js"></script>
+</body>
+</html>
+
+<!-- 
+
+    插值{{}} data  
+    指令（缩写）  v-  bind    :
+                v-  on      @
+    计算值 computed 会缓存，只有在第一次，或者依赖的date发生改变时才会更新
+
+
+
+
+
+    Mustache 语法不能作用在 HTML 特性上，遇到这种情况应该使用 v-bind 指令
+
+    也就是说
+
+    <div>{{message}}</div>  可行
+    <div v-html="message"></div>
+
+    <div id="{{message}}"></div>  不行
+    <div v-bind:id="message"></div> 可行
+
+
+    {{}} 中可以用表达式
+
+    这是语句，不是表达式
+    {{ var a = 1 }}
+    流控制也不会生效，请使用三元表达式
+    {{ if (ok) { return message } }}
+
+    这两个是语句，不是表达式
+
+ -->
+
