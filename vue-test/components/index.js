@@ -8,7 +8,8 @@ var app = new Vue({
             '吃饭',
             '睡觉',
             '打豆豆'
-        ]
+        ],
+        inputText:''
     },
     computed:{
         tl:function(){
